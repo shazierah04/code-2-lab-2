@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 26.8.0.3 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot;
+        content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+  &lt;title&gt;WebAR - Rotating Red Box&lt;/title&gt;
+
+  &lt;!-- A-Frame Library --&gt;
+  &lt;script src=&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;!-- AR.js Library --&gt;
+  &lt;script src=&quot;https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
+
+  &lt;style&gt;
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .instructions {
+      position: fixed;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      z-index: 10;
+      text-shadow: 1px 1px 3px black;
+      pointer-events: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div class=&quot;instructions&quot;&gt;
+    Point your camera at the Hiro marker
+  &lt;/div&gt;
+
+  &lt;!-- WebAR Scene --&gt;
+  &lt;a-scene
+    embedded
+    vr-mode-ui=&quot;enabled: false&quot;
+    renderer=&quot;antialias: true; alpha: true&quot;
+    arjs=&quot;sourceType: webcam; debugUIEnabled: false;&quot;&gt;
+
+    &lt;!-- Hiro Marker --&gt;
+    &lt;a-marker preset=&quot;hiro&quot;&gt;
+
+      &lt;!-- Rotating Red Box --&gt;
+      &lt;a-box
+        position=&quot;0 0.5 0&quot;
+        rotation=&quot;0 0 0&quot;
+        scale=&quot;1 1 1&quot;
+        material=&quot;color: #ff0000; opacity: 0.8; roughness: 0.5;&quot;
+        animation=&quot;
+          property: rotation;
+          to: 0 360 0;
+          loop: true;
+          dur: 3000;
+          easing: linear;&quot;&gt;
+      &lt;/a-box&gt;
+
+    &lt;/a-marker&gt;
+
+    &lt;!-- AR Camera --&gt;
+    &lt;a-entity camera&gt;&lt;/a-entity&gt;
+
+  &lt;/a-scene&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
